@@ -1,7 +1,7 @@
 #include "arm_controller/kinematics_solver.hpp"
 #include "arm_controller/kdl_parser.hpp"
 
-#include <urdf/model.h>
+#include <urdf_parser/urdf_parser.h>
 
 namespace arm_controller
 {
@@ -13,8 +13,8 @@ KinematicsSolver::KinematicsSolver()
 
 bool KinematicsSolver::initialize(const std::string & urdf_string)
 {
-  urdf::Model urdf_model;
-  if (!urdf_model.initString(urdf_string)) {
+  auto urdf_model = urdf::parseURDF(urdf_string);
+  if (!urdf_model) {
     return false;
   }
 

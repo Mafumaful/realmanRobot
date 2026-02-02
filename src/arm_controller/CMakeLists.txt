@@ -10,10 +10,11 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(urdf REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(urdfdom REQUIRED)
+find_package(urdfdom_headers REQUIRED)
 
 # Find orocos-kdl via pkg-config
 find_package(PkgConfig REQUIRED)
@@ -23,6 +24,8 @@ include_directories(
   include
   ${EIGEN3_INCLUDE_DIR}
   ${orocos_kdl_INCLUDE_DIRS}
+  ${urdfdom_INCLUDE_DIRS}
+  ${urdfdom_headers_INCLUDE_DIRS}
 )
 
 add_executable(arm_controller_node
@@ -37,13 +40,13 @@ ament_target_dependencies(arm_controller_node
   sensor_msgs
   geometry_msgs
   std_msgs
-  urdf
   tf2
   tf2_ros
 )
 
 target_link_libraries(arm_controller_node
   ${orocos_kdl_LIBRARIES}
+  ${urdfdom_LIBRARIES}
 )
 
 install(TARGETS

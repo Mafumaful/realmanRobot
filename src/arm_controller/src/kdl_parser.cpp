@@ -86,9 +86,9 @@ bool addChildrenToTree(
   return true;
 }
 
-bool treeFromUrdfModel(const urdf::Model & robot_model, KDL::Tree & tree)
+bool treeFromUrdfModel(const urdf::ModelInterfaceSharedPtr & robot_model, KDL::Tree & tree)
 {
-  auto root = robot_model.getRoot();
+  auto root = robot_model->getRoot();
   if (!root) {
     return false;
   }

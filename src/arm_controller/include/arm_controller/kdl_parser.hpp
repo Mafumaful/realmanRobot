@@ -3,12 +3,12 @@
 
 #include <string>
 #include <kdl/tree.hpp>
-#include <urdf/model.h>
+#include <urdf_model/model.h>
 
 namespace arm_controller
 {
 
-bool treeFromUrdfModel(const urdf::Model & robot_model, KDL::Tree & tree);
+bool treeFromUrdfModel(const urdf::ModelInterfaceSharedPtr & robot_model, KDL::Tree & tree);
 
 }  // namespace arm_controller
 
