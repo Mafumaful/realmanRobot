@@ -14,7 +14,6 @@
   <depend>geometry_msgs</depend>
   <depend>std_msgs</depend>
   <depend>kdl_parser</depend>
-  <depend>orocos_kdl_vendor</depend>
   <depend>urdf</depend>
   <depend>tf2</depend>
   <depend>tf2_ros</depend>
