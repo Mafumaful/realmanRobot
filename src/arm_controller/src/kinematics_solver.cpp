@@ -1,6 +1,6 @@
 #include "arm_controller/kinematics_solver.hpp"
+#include "arm_controller/kdl_parser.hpp"
 
-#include <kdl_parser/kdl_parser.hpp>
 #include <urdf/model.h>
 
 namespace arm_controller
@@ -18,7 +18,7 @@ bool KinematicsSolver::initialize(const std::string & urdf_string)
     return false;
   }
 
-  if (!kdl_parser::treeFromUrdfModel(urdf_model, tree_)) {
+  if (!treeFromUrdfModel(urdf_model, tree_)) {
     return false;
   }
 
