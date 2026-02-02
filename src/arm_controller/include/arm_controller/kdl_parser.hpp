@@ -2,8 +2,10 @@
 #define ARM_CONTROLLER__KDL_PARSER_HPP_
 
 #include <string>
+#include <memory>
 #include <kdl/tree.hpp>
 #include <urdf_model/model.h>
+#include <urdf_model/types.h>
 
 namespace arm_controller
 {

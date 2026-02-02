@@ -2,6 +2,7 @@
 #define ARM_CONTROLLER__CUBIC_SPLINE_HPP_
 
 #include <vector>
+#include <cstddef>
 
 namespace arm_controller
 {
