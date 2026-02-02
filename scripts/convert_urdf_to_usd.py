@@ -5,10 +5,10 @@ URDF 转 USD 转换脚本
 功能：将 robot_V10.urdf 转换为 Isaac Sim 可用的 USD 格式
 
 使用方法：
-    ./isaac-sim.sh --exec /root/code/realmanRobot/scripts/convert_urdf_to_usd.py
+    /home/wang/isaac-sim/isaac-sim.sh --exec /root/code/realmanRobot/scripts/convert_urdf_to_usd.py
 """
 
-from isaacsim import SimulationApp
+from omni.isaac.kit import SimulationApp
 
 # 启动仿真应用（无头模式，转换完成后自动关闭）
 simulation_app = SimulationApp({"headless": True})
