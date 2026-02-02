@@ -10,14 +10,15 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(kdl_parser REQUIRED)
-find_package(orocos_kdl_vendor REQUIRED)
-find_package(orocos_kdl REQUIRED)
 find_package(urdf REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_kdl REQUIRED)
 find_package(Eigen3 REQUIRED)
+
+# Find KDL
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(orocos_kdl REQUIRED orocos-kdl)
 
 include_directories(
   include
