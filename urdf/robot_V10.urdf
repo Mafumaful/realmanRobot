@@ -276,7 +276,7 @@
     <child
       link="Link_A3" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-2.26"
       upper="2.26"
