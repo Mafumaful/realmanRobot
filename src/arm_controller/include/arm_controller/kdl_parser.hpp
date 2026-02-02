@@ -5,12 +5,11 @@
 #include <memory>
 #include <kdl/tree.hpp>
 #include <urdf_model/model.h>
-#include <urdf_model/types.h>
 
 namespace arm_controller
 {
 
-bool treeFromUrdfModel(const urdf::ModelInterfaceSharedPtr & robot_model, KDL::Tree & tree);
+bool treeFromUrdfModel(const std::shared_ptr<urdf::ModelInterface> & robot_model, KDL::Tree & tree);
 
 }  // namespace arm_controller
 
