@@ -11,13 +11,19 @@ find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(kdl_parser REQUIRED)
+find_package(orocos_kdl_vendor REQUIRED)
 find_package(orocos_kdl REQUIRED)
 find_package(urdf REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_kdl REQUIRED)
+find_package(Eigen3 REQUIRED)
 
-include_directories(include)
+include_directories(
+  include
+  ${EIGEN3_INCLUDE_DIR}
+  ${orocos_kdl_INCLUDE_DIRS}
+)
 
 add_executable(arm_controller_node
   src/arm_controller_node.cpp
@@ -31,11 +37,14 @@ ament_target_dependencies(arm_controller_node
   geometry_msgs
   std_msgs
   kdl_parser
-  orocos_kdl
   urdf
   tf2
   tf2_ros
   tf2_kdl
+)
+
+target_link_libraries(arm_controller_node
+  ${orocos_kdl_LIBRARIES}
 )
 
 install(TARGETS
