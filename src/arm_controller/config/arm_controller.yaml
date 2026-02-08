@@ -1,5 +1,0 @@
-arm_controller_node:
-  ros__parameters:
-    urdf_path: ""
-    control_rate: 100.0
-    trajectory_duration: 3.0
